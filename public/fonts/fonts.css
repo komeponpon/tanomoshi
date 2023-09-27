@@ -1,0 +1,5 @@
+/* public/fonts/fonts.css */
+@font-face {
+  font-family: "マキナス"; /* フォントの名前を指定 */
+  src: url("/fonts/Makinas-4-Flat.otf") format("woff2"), 
+}
