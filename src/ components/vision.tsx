@@ -1,19 +1,31 @@
-import * as React from 'react';
+import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Visiontext = () => {
+  const handleLoop = (loopCount: number) => {
+    console.log(`Just completed loop ${loopCount}`);
+  };
 
   return (
-    <div>
+    <div
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      }}
+    >
       <h1
-        style={{ color:'#43d9d9', 
-                 margin: 'auto 0', 
-                 fontWeight: 'normal', 
-                 fontSize:'56px',
-                 fontFamily:"マキナス"
-                }}
+        style={{
+          color: '#43d9d9',
+          margin: 'auto 0',
+          fontWeight: 'normal',
+          fontSize: '48px',
+          fontFamily: 'マキナス',
+          whiteSpace: 'nowrap'
+        }}
       >
-        リアルとデジタルの {' '}
+        リアルとデジタルの{' '}
         <span style={{ color: '#D93BCE', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter
@@ -24,9 +36,6 @@ const Visiontext = () => {
             deleteSpeed={50}
             delaySpeed={1000}
             words={['境界線をなくす', '融合']}
-            onLoop={(loopCount: any) =>
-              console.log(`Just completed loop ${loopCount}`)
-            }
           />
         </span>
       </h1>

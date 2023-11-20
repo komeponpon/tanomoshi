@@ -18,7 +18,7 @@ interface Props {
 }
 
 const drawerWidth = 180;
-const navItems = ['Works', 'About', 'Contact'];
+const navItems = ['About', 'Works', 'Contact'];
 
 export default function AppBarComponent(props: Props) {
   const { window } = props;
@@ -53,9 +53,10 @@ export default function AppBarComponent(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" 
-         sx={{ backgroundColor: 'transparent',
-               boxShadow: 'none' }}>
+      <AppBar component="nav"
+              position='absolute'
+              sx={{ backgroundColor: 'transparent',
+                    boxShadow: 'none' }}>
         <Toolbar sx={{alignItems: 'center',justifyContent:'space-between'}}>
             <div style={{ marginTop: '16px' }}>
             <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '205.5px', }} />
@@ -69,37 +70,37 @@ export default function AppBarComponent(props: Props) {
           </Box>
           <Box sx={{display:{xs: 'block', sm: 'none'}}}>
             <IconButton
-             aria-label="opne drawer"
-             edge="end"
-             onClick={handleDrawerToggle}
-             sx={{mr:2, display:{sm: 'none'}, color:'#fff'}}>
+              aria-label="opne drawer"
+              edge="end"
+              onClick={handleDrawerToggle}
+              sx={{mr:2, display:{sm: 'none'}, color:'#fff'}}>
 
               <MenuIcon/>
-             </IconButton>
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
-         container={container}
-         variant="temporary"
-         open={mobileOpen}
-         onClose={handleDrawerToggle}
-         anchor='right'
-         ModalProps={{
-          keepMounted: true,
-         }}
-         sx={{
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          anchor='right'
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
           display:{xs: 'block', sm: 'none'},
-          '& .MuiDrawer-paper':{ 
-            boxSizing: 'border-box', 
-            width: drawerWidth, 
+          '& .MuiDrawer-paper':{
+            boxSizing: 'border-box',
+            width: drawerWidth,
             backgroundColor: '#121212',
-            opacity:'80%', 
+            opacity:'80%',
             color: '#fff' },
-         }}>
+          }}>
           {drawer}
-         </Drawer>
+        </Drawer>
       </Box>
     </Box>
   );
