@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // Define a dark theme
@@ -27,12 +27,11 @@ export default function WorksCard() {
     },
     // Add two more projects here
     {
-      name: 'コーポレートサイト(仮）',
+      name: '何れコーポレートサイト',
       description: 'ポートフォリオ初めて作りました。',
       technologies: '使用技術：Next.js/TypeScript・MUI',
       image: '/images/works/tanomoshi.png',
     },
-
     {
       name: 'POWERWALL Booster',
       description: 'APIを定時処理させるアプリです。',
@@ -43,33 +42,30 @@ export default function WorksCard() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Grid container spacing={5} justifyContent="space-around">
         {projects.map((project, index) => (
-          <a key={index} href={project.link} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Card sx={{ maxWidth: 345, minHeight:354.87 , marginBottom: '20px',marginLeft:'60px' }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  width="100%"
-                  image={project.image}
-                  alt={project.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div" fontWeight="bold">
-                    {project.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.description}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.technologies}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </a>
+          <Grid item key={index}>
+            <a href={project.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Card sx={{ maxWidth: 345, minHeight: 354.87, marginBottom: '20px' }}>
+                <CardActionArea>
+                  <CardMedia component="img" width="100%" image={project.image} alt={project.name} />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="div" fontWeight="bold">
+                      {project.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.description}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.technologies}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </a>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </ThemeProvider>
   );
 }
