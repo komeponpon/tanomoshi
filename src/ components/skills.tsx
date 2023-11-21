@@ -25,10 +25,10 @@ export default function Skills() {
 
   return (
     <div>
-      <div style={{ padding: '40px' }}>
+      <div style={{ marginBottom: '40px' }}>
         <Typography
             variant='h6'
-            style={{ fontSize: '36px', color: '#FB23FF' }}>
+            style={{ fontSize: '28px', color: '#FB23FF' }}>
           Language
         </Typography>
       </div>
@@ -36,7 +36,7 @@ export default function Skills() {
         {LanguageData.map((language, index) => (
           <div key={index}>
             <a href={language.link}>
-              <img src={language.image} alt={language.label} style={{ height: '128px', cursor: 'pointer' }} />
+              <img src={language.image} alt={language.label} style={{ height: '96px', cursor: 'pointer' }} />
             </a>
           </div>
         ))}
@@ -44,7 +44,7 @@ export default function Skills() {
       <div style={{ padding: '40px' }}>
         <Typography
               variant='h6'
-              style={{ fontSize: '36px', color: '#23F2FF' }}>
+              style={{ fontSize: '28px', color: '#23F2FF' }}>
           Framework/Library
         </Typography>
       </div>
@@ -52,7 +52,7 @@ export default function Skills() {
         {FrameworkData.map((framework, index) => (
           <div key={index}>
             <a href={framework.link}>
-              <img src={framework.image} alt={framework.label} style={{ height: '128px', cursor: 'pointer' }} />
+              <img src={framework.image} alt={framework.label} style={{ height: '96px', cursor: 'pointer' }} />
             </a>
           </div>
         ))}

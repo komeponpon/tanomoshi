@@ -60,7 +60,7 @@ export default function BasicTabs() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '50%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
             value={value}
@@ -70,7 +70,7 @@ export default function BasicTabs() {
           >
             <Tab label="About" {...a11yProps(0)} />
             <Tab label="Skills" {...a11yProps(1)} />
-            <Tab label="Experience" {...a11yProps(2)} />
+            {/*<Tab label="Experience" {...a11yProps(2)} />*/}
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>

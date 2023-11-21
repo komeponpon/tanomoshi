@@ -49,8 +49,9 @@ const Home: NextPage = () => {
       <Typography
         variant="h6"
         style={{
-        fontSize:"36px",
-        color:"#9223FF"
+        fontSize:"28px",
+        color:"#9223FF",
+        marginBottom:"40px"
       }}>
         Works
       </Typography>
@@ -63,7 +64,7 @@ const Home: NextPage = () => {
       <Typography
         variant="h6"
         style={{
-        fontSize:"36px",
+        fontSize:"28px",
         color:"#9223FF"
       }}>
         Contact
