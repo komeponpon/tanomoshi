@@ -3,6 +3,7 @@ import AppBarComponent from "@/ components/appbar";
 import Visiontext from "@/ components/vision";
 import WorksCard from "@/ components/works";
 import { NextPage } from "next";
+import { Typography } from "@mui/material";
 
 const Home: NextPage = () => {
   return (
@@ -45,26 +46,28 @@ const Home: NextPage = () => {
           style={{
             padding: "60px",
             }}>
-      <p
-      style={{
+      <Typography
+        variant="h6"
+        style={{
         fontSize:"36px",
         color:"#9223FF"
       }}>
         Works
-      </p>
+      </Typography>
       <WorksCard/>
     </div>
     <div id="contact"
           style={{
             padding: "30px",
             }}>
-      <p
-      style={{
+      <Typography
+        variant="h6"
+        style={{
         fontSize:"36px",
         color:"#9223FF"
       }}>
         Contact
-      </p>
+      </Typography>
     </div>
   </div>
   );

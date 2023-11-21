@@ -37,7 +37,7 @@ export default function WorksCard() {
       name: 'POWERWALL Booster',
       description: 'APIを定時処理させるアプリです。',
       technologies: '使用技術：Flutter/Dart',
-      image: '/images/works/project1.jpg',
+      image: '/images/works/powerwall.png',
     },
   ];
 

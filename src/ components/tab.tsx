@@ -4,8 +4,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Skills from './skills';
-import About from './about';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import About from './about';
 
 // Define a dark theme
 const darkTheme = createTheme({
@@ -36,12 +36,13 @@ function CustomTabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
   );
 }
+
 
 function a11yProps(index: number) {
   return {
@@ -79,7 +80,6 @@ export default function BasicTabs() {
           <Skills />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          Experience
         </CustomTabPanel>
       </Box>
     </ThemeProvider>

@@ -26,7 +26,9 @@ export default function Skills() {
   return (
     <div>
       <div style={{ padding: '40px' }}>
-        <Typography style={{ fontSize: '36px', color: '#FB23FF' }}>
+        <Typography
+            variant='h6'
+            style={{ fontSize: '36px', color: '#FB23FF' }}>
           Language
         </Typography>
       </div>
@@ -40,7 +42,9 @@ export default function Skills() {
         ))}
       </div>
       <div style={{ padding: '40px' }}>
-        <Typography style={{ fontSize: '36px', color: '#23F2FF' }}>
+        <Typography
+              variant='h6'
+              style={{ fontSize: '36px', color: '#23F2FF' }}>
           Framework/Library
         </Typography>
       </div>
