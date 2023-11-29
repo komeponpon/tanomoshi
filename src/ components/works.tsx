@@ -27,16 +27,17 @@ export default function WorksCard() {
     },
     // Add two more projects here
     {
-      name: '何れコーポレートサイト',
-      description: 'ポートフォリオ初めて作りました。',
-      technologies: '使用技術：Next.js/TypeScript・MUI',
-      image: '/images/works/tanomoshi.png',
-    },
-    {
       name: 'POWERWALL Booster',
       description: 'APIを定時処理させるアプリです。',
       technologies: '使用技術：Flutter/Dart',
       image: '/images/works/powerwall.png',
+    },
+    {
+      name: 'ECサイト',
+      description: 'Anker製品のオンラインショップです。',
+      technologies: '使用技術：Shopify/GemPages',
+      image: '/images/works/anker.sisolar.co.jp.png',
+      link: 'https://anker.sisolar.co.jp',
     },
   ];
 
