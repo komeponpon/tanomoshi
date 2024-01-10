@@ -31,6 +31,7 @@ export default function WorksCard() {
       description: 'APIを定時処理させるアプリです。',
       technologies: '使用技術：Flutter/Dart',
       image: '/images/works/powerwall.png',
+      link: 'https://github.com/komeponpon/powerwall_booster',
     },
     {
       name: 'ECサイト',

@@ -25,7 +25,7 @@ const Visiontext = () => {
           whiteSpace: 'nowrap'
         }}
       >
-        リアルとデジタルの{' '}
+        リアルとバーチャルの{' '}
         <span style={{ color: '#D93BCE', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter

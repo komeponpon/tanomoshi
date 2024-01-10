@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -28,54 +28,35 @@ export default function AppBarComponent(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{
-        textAlign: 'center',
-      }}
-    >
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav"
-              position='absolute'
-              sx={{ backgroundColor: 'transparent',
-                    boxShadow: 'none' }}>
-        <Toolbar sx={{alignItems: 'center',justifyContent:'space-between'}}>
-            <div style={{ marginTop: '16px' }}>
-            <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '205.5px', }} />
-            </div>
+      <AppBar
+        component="nav"
+        position='absolute'
+        sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}
+      >
+        <Toolbar sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ marginTop: '16px' }}>
+            <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '205.5px' }} />
+          </div>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', marginLeft: '16px' }}>
+              <Button key={item} sx={{ color: '#fff', marginLeft: '16px' }} href={`#${item.toLowerCase()}`}>
                 {item}
               </Button>
             ))}
           </Box>
-          <Box sx={{display:{xs: 'block', sm: 'none'}}}>
+          <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
             <IconButton
-              aria-label="opne drawer"
+              aria-label="open drawer"
               edge="end"
               onClick={handleDrawerToggle}
-              sx={{mr:2, display:{sm: 'none'}, color:'#fff'}}>
-
-              <MenuIcon/>
+              sx={{ mr: 2, display: { sm: 'none' }, color: '#fff' }}
+            >
+              <MenuIcon />
             </IconButton>
           </Box>
         </Toolbar>
@@ -91,15 +72,32 @@ export default function AppBarComponent(props: Props) {
             keepMounted: true,
           }}
           sx={{
-          display:{xs: 'block', sm: 'none'},
-          '& .MuiDrawer-paper':{
-            boxSizing: 'border-box',
-            width: drawerWidth,
-            backgroundColor: '#121212',
-            opacity:'80%',
-            color: '#fff' },
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              backgroundColor: '#121212',
+              opacity: '80%',
+              color: '#fff',
+            },
           }}>
-          {drawer}
+          <Box
+            onClick={handleDrawerToggle}
+            sx={{
+              textAlign: 'center',
+            }}
+          >
+            <Divider />
+            <List>
+              {navItems.map((item) => (
+                <ListItem key={item} disablePadding>
+                  <ListItemButton sx={{ textAlign: 'center' }}>
+                    <ListItemText primary={item} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
         </Drawer>
       </Box>
     </Box>
