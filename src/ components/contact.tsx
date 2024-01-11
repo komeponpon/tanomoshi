@@ -6,7 +6,18 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import { useRouter } from "next/router";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
+// ダークテーマの設定
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    background: {
+      default: '#121212', // 背景色を設定
+    },
+  },
+});
 
 // フォームの型
 type ContactForm = {
@@ -51,17 +62,16 @@ const Contact: React.FC<ContactProps> = () => {
   };
 
   return (
-    <>
-      <main>
-        <Container maxWidth="md">
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
           <Box>
-            <FormControl fullWidth>
-              <Stack spacing={3} direction="column">
+            <FormControl fullWidth  sx={{ maxWidth: '600px' }}>
+              <Stack spacing={5} direction="column">
                 <TextField variant="outlined" required label="お名前" {...register('name')} error={'name' in errors} helperText={errors.name?.message} />
                 <TextField variant="outlined" required label="メールアドレス" type="email" {...register('email')} error={'email' in errors} helperText={errors.email?.message} />
                 <TextField variant="outlined" required label="問い合わせ内容" multiline rows={6} {...register('message')} error={'message' in errors} helperText={errors.message?.message} />
               </Stack>
-              <Stack alignItems="center" mt={3}>
+              <Stack alignItems="center" mt={5}>
                 <Button color="primary" variant="contained" size="large" sx={{ width: '200px' }} onClick={handleSubmit(onSubmit)}>
                   送信
                 </Button>
@@ -69,9 +79,7 @@ const Contact: React.FC<ContactProps> = () => {
             </FormControl>
           </Box>
           <Box height="20vh"></Box>
-        </Container>
-      </main>
-    </>
+    </ThemeProvider>
   );
 };
 

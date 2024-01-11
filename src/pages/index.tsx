@@ -4,6 +4,7 @@ import Visiontext from "@/ components/vision";
 import WorksCard from "@/ components/works";
 import { NextPage } from "next";
 import { Typography } from "@mui/material";
+import Contact from "@/ components/contact";
 
 const Home: NextPage = () => {
   return (
@@ -59,16 +60,19 @@ const Home: NextPage = () => {
     </div>
     <div id="contact"
           style={{
+            width: "100%",
             padding: "30px",
             }}>
       <Typography
         variant="h6"
         style={{
         fontSize:"28px",
-        color:"#9223FF"
+        color:"#9223FF",
+        marginBottom:"40px",
       }}>
         Contact
       </Typography>
+      <Contact/>
     </div>
   </div>
   );
