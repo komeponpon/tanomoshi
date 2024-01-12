@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Typography } from '@mui/material';
+import Image from 'next/image'; // 追加
 
 export default function About() {
-  const ProfileImage = { label: 'profile', image: 'images/profile.jpg' };
+  const ProfileImage = { label: 'profile', image: '/images/profile.jpg' }; // 画像パスを修正
 
   return (
     <div>
@@ -18,10 +19,13 @@ export default function About() {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {/* プロフィール画像 */}
         <div>
-          <img
+          {/* Image コンポーネントに置き換え */}
+          <Image
             src={ProfileImage.image}
             alt={ProfileImage.label}
-            style={{ height: 354.87, borderRadius: '4px', marginRight: '16px' }}
+            width={266}
+            height={354}
+            style={{ borderRadius: '4px', marginRight: '16px' }}
           />
         </div>
 
@@ -37,7 +41,6 @@ export default function About() {
               趣味：ポーカー/スノーボード/阿波踊り<br/>
               好きな食べ物：杏仁豆腐<br/>
               好きな飲み物：ウイスキー/ドクターペッパー<br/>
-
           </Typography>
         </div>
       </div>
