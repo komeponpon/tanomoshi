@@ -4,7 +4,8 @@ import Visiontext from "@/ components/vision";
 import WorksCard from "@/ components/works";
 import { NextPage } from "next";
 import { Typography } from "@mui/material";
-import Contact from "@/ components/contact";
+
+//import Contact from "@/ components/contact";
 
 const Home: NextPage = () => {
   return (
@@ -72,7 +73,6 @@ const Home: NextPage = () => {
       }}>
         Contact
       </Typography>
-      <Contact/>
     </div>
   </div>
   );
