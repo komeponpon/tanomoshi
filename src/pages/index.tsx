@@ -1,11 +1,18 @@
 import BasicTabs from "@/ components/tab";
+import Head from "next/head";
 import AppBarComponent from "@/ components/appbar";
 import Visiontext from "@/ components/vision";
 import WorksCard from "@/ components/works";
 import { NextPage } from "next";
 import { Typography } from "@mui/material";
+import { title } from "process";
 
 //import Contact from "@/ components/contact";
+
+const text = {
+  title: "タノモシ",
+  description: "モダン技術を組み合わせたシステム開発を提供します。ウェブアプリからモバイルアプリまで、お客様のビジネス目標を実現するためお手伝いします。"
+}
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +26,12 @@ const Home: NextPage = () => {
       backgroundColor: "#121212"
     }}
   >
+    <div>
+      <Head>
+        <title>{text.title}</title>
+        <meta name="description" content={text.description}/>
+      </Head>
+    </div>
     <div
       style={{
         width: "100%",
