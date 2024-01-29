@@ -11,4 +11,6 @@ MUI
 
 ## Vercelにデプロイ済 
 
-https://tanomoshi.vercel.app
+https://tanomoshi.vercel.app 
+
+レスポンシブ対応はあとでやります
