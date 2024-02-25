@@ -1,33 +1,28 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+import { useTheme, useMediaQuery } from '@mui/material';
 
 const Visiontext = () => {
-  const handleLoop = (loopCount: number) => {
-    console.log(`Just completed loop ${loopCount}`);
-  };
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-      }}
-    >
-      <h1
-        style={{
-          color: '#43d9d9',
-          margin: 'auto 0',
-          fontWeight: 'normal',
-          fontSize: '48px',
-          fontFamily: 'マキナス',
-          whiteSpace: 'nowrap'
-        }}
-      >
+    <div style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+    }}>
+      <h1 style={{
+        color: '#43d9d9',
+        margin: 'auto 0',
+        fontWeight: 'normal',
+        fontSize: isMobile ? '20px' : '48px', // スマホ時は16px、それ以外は48px
+        fontFamily: 'マキナス',
+        whiteSpace: 'nowrap'
+      }}>
         リアルとバーチャルの{' '}
         <span style={{ color: '#D93BCE', fontWeight: 'bold' }}>
-          {/* Style will be inherited from the parent element */}
           <Typewriter
             loop
             cursor
