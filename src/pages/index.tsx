@@ -7,7 +7,6 @@ import BasicTabs from '@/ components/tab';
 import AppBarComponent from '@/ components/appbar';
 import Visiontext from '@/ components/vision';
 import WorksCard from '@/ components/works';
-// import Contact from '@/ components/contact';
 
 const text = {
   title: "タノモシ",
@@ -75,7 +74,6 @@ const Home: NextPage = () => {
         }}>
           Contact
         </Typography>
-        {/* コンタクトフォームをここに配置 */}
       </div>
     </div>
   );
