@@ -1,8 +1,13 @@
 import * as React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, useTheme, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 
 export default function Skills() {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down('xs')); //スマートフォン
+  const isSm = useMediaQuery(theme.breakpoints.down('sm')); //タブレット
+  const isMd = useMediaQuery(theme.breakpoints.up('md')); //デスクトップ
+
   const LanguageData = [
     { label: 'Python', image: '/images/skills/python-logo-only.svg', link: 'https://www.python.org/' },
     { label: 'TypeScript', image: '/images/skills/ts-logo-128.svg', link: 'https://www.typescriptlang.org/' },
@@ -19,15 +24,20 @@ export default function Skills() {
 
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridTemplateColumns: isXs? 'repeat(2, 1fr)': isSm? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
     justifyContent: 'center',
     alignItems: 'center',
+    gap: '20px',
+  };
+
+  const typographyStyle = {
+    fontSize: isXs? '18px' : isSm? '24px' : '28px',
   };
 
   return (
     <div>
       <div style={{ marginBottom: '40px' }}>
-        <Typography variant='h6' style={{ fontSize: '28px', color: '#FB23FF' }}>
+        <Typography variant='h6' style={{ ...typographyStyle, color: '#FB23FF' }}>
           Language
         </Typography>
       </div>
@@ -46,9 +56,9 @@ export default function Skills() {
           </div>
         ))}
       </div>
-      <div style={{ padding: '40px' }}>
-        <Typography variant='h6' style={{ fontSize: '28px', color: '#23F2FF' }}>
-          Framework/Library
+      <div style={{ marginTop: '40px', marginBottom:'40px'}}>
+        <Typography variant='h6' style={{ ...typographyStyle, color: '#23F2FF' }}>
+          FW/Library
         </Typography>
       </div>
       <div style={gridStyle}>
