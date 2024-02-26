@@ -59,7 +59,7 @@ export default function BasicTabs() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box sx={{ width: '50%' }}>
+      <Box sx={{ width: {xs:'100%', sm: '50%'} }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
             value={value}

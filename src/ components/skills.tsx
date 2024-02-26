@@ -31,7 +31,7 @@ export default function Skills() {
   };
 
   const typographyStyle = {
-    fontSize: isXs? '18px' : isSm? '24px' : '28px',
+    fontSize: isXs? '18px' : isSm? '18px' : '28px',
   };
 
   return (
