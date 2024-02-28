@@ -12,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { useTheme, useMediaQuery } from '@mui/material';
 
 interface Props {
   window?: () => Window;
@@ -21,6 +22,8 @@ const drawerWidth = 180;
 const navItems = ['About', 'Works', 'Contact'];
 
 export default function AppBarComponent(props: Props) {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -39,8 +42,11 @@ export default function AppBarComponent(props: Props) {
         sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}
       >
         <Toolbar sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ marginTop: '16px' }}>
-            <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '205.5px' }} />
+          <div style={{
+              marginTop: '16px',
+              maxWidth: isMobile ? '154.125px' : '205.5px', // isMobileがtrueなら75%のサイズ
+            }}>
+            <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '100%' }} />
           </div>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
